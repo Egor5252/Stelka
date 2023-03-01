@@ -23,15 +23,19 @@ class TForm1 : public TForm
 __published:	// IDE-managed Components
 	TImage *Image1;
 	TButton *Button1;
-	TEdit *Edit1;
 	TFileOpenDialog *FileOpenDialog1;
 	TStatusBar *StatusBar1;
 	TButton *Button2;
+	TButton *Button3;
+	TButton *Button4;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
           int X, int Y);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations
@@ -40,9 +44,10 @@ public:		// User declarations
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
 //---------------------------------------------------------------------------
+
 struct dot{
 	int x, y;
 };
-std::vector<dot> V;
+std::vector<dot> Dots;
 
 #endif

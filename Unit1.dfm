@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -30,14 +31,6 @@ object Form1: TForm1
     TabOrder = 0
     OnClick = Button1Click
   end
-  object Edit1: TEdit
-    Left = 927
-    Top = 63
-    Width = 159
-    Height = 21
-    ReadOnly = True
-    TabOrder = 1
-  end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 790
@@ -45,18 +38,33 @@ object Form1: TForm1
     Height = 19
     Panels = <>
     SimplePanel = True
-    ExplicitLeft = 552
-    ExplicitTop = 416
-    ExplicitWidth = 0
   end
   object Button2: TButton
     Left = 927
-    Top = 106
+    Top = 94
     Width = 159
     Height = 25
     Caption = #1047#1072#1082#1086#1085#1095#1080#1090#1100
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 1020
+    Top = 63
+    Width = 42
+    Height = 25
+    Caption = '-'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 956
+    Top = 63
+    Width = 42
+    Height = 25
+    Caption = '+'
+    TabOrder = 4
+    OnClick = Button4Click
   end
   object FileOpenDialog1: TFileOpenDialog
     FavoriteLinks = <>
