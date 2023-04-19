@@ -29,6 +29,7 @@ __published:	// IDE-managed Components
 	TButton *Button4;
 	TFileSaveDialog *FileSaveDialog1;
 	TFileOpenDialog *FileOpenDialog1;
+	TRadioGroup *RadioGroup1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
@@ -56,5 +57,9 @@ struct dot {
 	int x, y;
 };
 std::vector<dot> Dots;
+std::vector<dot> Vertical;
+std::vector<dot> Pychki;
+
+int count_of_dots;
 
 #endif

@@ -56,10 +56,34 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button, TS
           int X, int Y)
 {
 	if(Button == mbLeft){
-		dot A;
-		A.x = X; A.y = Y;
-		Dots.push_back(A);
-		Form1->Image1->Canvas->Ellipse(X+5,Y+5,X-5,Y-5);
+		if(Form1->RadioGroup1->ItemIndex == 2) {
+		Form1->Image1->Canvas->Pen->Color = clBlack;
+			dot A;
+			A.x = X; A.y = Y;
+			Dots.push_back(A);
+			Form1->Image1->Canvas->Ellipse(X+5,Y+5,X-5,Y-5);
+			count_of_dots++;
+		}
+
+		if(Form1->RadioGroup1->ItemIndex == 1) {
+			Form1->Image1->Canvas->Pen->Color = clRed;
+			dot A;
+			A.x = X; A.y = Y;
+			Pychki.push_back(A);
+			Form1->Image1->Canvas->Ellipse(X+5,Y+5,X-5,Y-5);
+			count_of_dots++;
+			if(count_of_dots == 4) Form1->RadioGroup1->ItemIndex++;
+		}
+
+		if(Form1->RadioGroup1->ItemIndex == 0) {
+			Form1->Image1->Canvas->Pen->Color = clBlue;
+			dot A;
+			A.x = X; A.y = Y;
+			Vertical.push_back(A);
+			Form1->Image1->Canvas->Ellipse(X+5,Y+5,X-5,Y-5);
+			count_of_dots++;
+			if(count_of_dots == 2) Form1->RadioGroup1->ItemIndex++;
+		}
 	}
 
 	if( Button == mbMiddle){
@@ -71,7 +95,13 @@ void __fastcall TForm1::Image1MouseDown(TObject *Sender, TMouseButton Button, TS
 
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
-    Form1->Image1->Canvas->Rectangle(0,0,Image1->Width,Image1->Height);
+	Form1->Image1->Canvas->Rectangle(0,0,Image1->Width,Image1->Height);
+
+	Form1->Image1->Canvas->Ellipse(Vertical[0].x+5,Vertical[0].y+5,Vertical[0].x-5,Vertical[0].y-5);
+	Form1->Image1->Canvas->Ellipse(Vertical[1].x+5,Vertical[1].y+5,Vertical[1].x-5,Vertical[1].y-5);
+
+	Form1->Image1->Canvas->Ellipse(Pychki[0].x+5,Pychki[0].y+5,Pychki[0].x-5,Pychki[0].y-5);
+	Form1->Image1->Canvas->Ellipse(Pychki[1].x+5,Pychki[1].y+5,Pychki[1].x-5,Pychki[1].y-5);
 
 	Form1->Image1->Canvas->MoveTo(Dots[0].x, Dots[0].y);
 
@@ -87,6 +117,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	Form1->Image1->Canvas->Ellipse(0,0,0,0);
+	count_of_dots = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -139,12 +170,11 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 
 void __fastcall TForm1::Button4Click(TObject *Sender)
 {
-	if(Form1->FileSaveDialog1->Execute()) {
-		std::ifstream Data_of_dots(Form1->FileSaveDialog1->FileName.w_str(), std::ios::binary);
+	if(Form1->FileOpenDialog1->Execute()) {
+		std::ifstream Data_of_dots(Form1->FileOpenDialog1->FileName.w_str(), std::ios::binary);
 		int size_of_vector;
 		Dots.clear();
 		Data_of_dots.read((char*)&size_of_vector,sizeof(int));
-		Edit1->Text = IntToStr(size_of_vector);
 		for(int i = 0; i < size_of_vector; ++i) {
 			dot timed_dot;
 			Data_of_dots.read((char*)&timed_dot,sizeof(dot));
@@ -155,4 +185,5 @@ void __fastcall TForm1::Button4Click(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+
 

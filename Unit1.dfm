@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 809
-  ClientWidth = 1094
+  ClientWidth = 1090
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -37,14 +37,15 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Top = 790
-    Width = 1094
+    Width = 1090
     Height = 19
     Panels = <>
     SimplePanel = True
+    ExplicitWidth = 1094
   end
   object Button2: TButton
     Left = 927
-    Top = 63
+    Top = 174
     Width = 159
     Height = 25
     Caption = #1047#1072#1082#1086#1085#1095#1080#1090#1100
@@ -69,19 +70,32 @@ object Form1: TForm1
     TabOrder = 4
     OnClick = Button4Click
   end
-  object Edit1: TEdit
-    Left = 944
-    Top = 224
-    Width = 121
-    Height = 21
+  object RadioGroup1: TRadioGroup
+    Left = 927
+    Top = 63
+    Width = 159
+    Height = 105
+    Caption = 'RadioGroup1'
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      #1042#1077#1088#1090#1080#1082#1072#1083#1100
+      #1055#1091#1095#1082#1080
+      #1058#1086#1095#1082#1080)
     TabOrder = 5
-    Text = 'Edit1'
   end
   object FileSaveDialog1: TFileSaveDialog
     FavoriteLinks = <>
     FileTypes = <>
     Options = []
-    Left = 776
+    Left = 864
     Top = 16
+  end
+  object FileOpenDialog1: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <>
+    Options = []
+    Left = 864
+    Top = 72
   end
 end
