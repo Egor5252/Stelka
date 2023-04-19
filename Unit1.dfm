@@ -12,6 +12,8 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnMouseWheelDown = FormMouseWheelDown
+  OnMouseWheelUp = FormMouseWheelUp
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -21,6 +23,7 @@ object Form1: TForm1
     Height = 769
     OnMouseDown = Image1MouseDown
     OnMouseMove = Image1MouseMove
+    OnMouseUp = Image1MouseUp
   end
   object Button1: TButton
     Left = 927
@@ -41,7 +44,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Left = 927
-    Top = 94
+    Top = 63
     Width = 159
     Height = 25
     Caption = #1047#1072#1082#1086#1085#1095#1080#1090#1100
@@ -49,28 +52,36 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 1020
-    Top = 63
-    Width = 42
+    Left = 927
+    Top = 752
+    Width = 75
     Height = 25
-    Caption = '-'
+    Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
     TabOrder = 3
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 956
-    Top = 63
-    Width = 42
+    Left = 1011
+    Top = 752
+    Width = 75
     Height = 25
-    Caption = '+'
+    Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100
     TabOrder = 4
     OnClick = Button4Click
   end
-  object FileOpenDialog1: TFileOpenDialog
+  object Edit1: TEdit
+    Left = 944
+    Top = 224
+    Width = 121
+    Height = 21
+    TabOrder = 5
+    Text = 'Edit1'
+  end
+  object FileSaveDialog1: TFileSaveDialog
     FavoriteLinks = <>
     FileTypes = <>
     Options = []
-    Left = 544
-    Top = 400
+    Left = 776
+    Top = 16
   end
 end
