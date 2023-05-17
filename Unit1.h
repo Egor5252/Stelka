@@ -54,7 +54,7 @@ extern PACKAGE TForm1 *Form1;
 //---------------------------------------------------------------------------
 
 struct dot {
-	int x, y;
+	double x, y;
 };
 std::vector<dot> Dots;
 std::vector<dot> Vertical;

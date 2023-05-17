@@ -41,11 +41,10 @@ object Form1: TForm1
     Height = 19
     Panels = <>
     SimplePanel = True
-    ExplicitWidth = 1094
   end
   object Button2: TButton
     Left = 927
-    Top = 174
+    Top = 143
     Width = 159
     Height = 25
     Caption = #1047#1072#1082#1086#1085#1095#1080#1090#1100
@@ -74,13 +73,12 @@ object Form1: TForm1
     Left = 927
     Top = 63
     Width = 159
-    Height = 105
-    Caption = 'RadioGroup1'
+    Height = 74
+    Caption = #1048#1085#1076#1080#1082#1072#1090#1086#1088' ('#1085#1077' '#1072#1082#1090#1080#1074#1077#1085')'
     Enabled = False
     ItemIndex = 0
     Items.Strings = (
       #1042#1077#1088#1090#1080#1082#1072#1083#1100
-      #1055#1091#1095#1082#1080
       #1058#1086#1095#1082#1080)
     TabOrder = 5
   end
