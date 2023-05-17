@@ -30,6 +30,9 @@ __published:	// IDE-managed Components
 	TFileSaveDialog *FileSaveDialog1;
 	TFileOpenDialog *FileOpenDialog1;
 	TRadioGroup *RadioGroup1;
+	TLabeledEdit *LabeledEdit1;
+	TLabeledEdit *LabeledEdit2;
+	TLabeledEdit *LabeledEdit3;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
@@ -61,5 +64,7 @@ std::vector<dot> Vertical;
 std::vector<dot> Pychki;
 
 int count_of_dots;
+double coefficient;
+double polnota, razmer;
 
 #endif

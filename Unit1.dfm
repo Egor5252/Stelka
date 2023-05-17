@@ -82,6 +82,36 @@ object Form1: TForm1
       #1058#1086#1095#1082#1080)
     TabOrder = 5
   end
+  object LabeledEdit1: TLabeledEdit
+    Left = 927
+    Top = 264
+    Width = 121
+    Height = 21
+    EditLabel.Width = 83
+    EditLabel.Height = 13
+    EditLabel.Caption = #1048#1089#1093#1086#1076#1085#1072#1103' '#1076#1083#1080#1085#1072
+    TabOrder = 6
+  end
+  object LabeledEdit2: TLabeledEdit
+    Left = 927
+    Top = 312
+    Width = 121
+    Height = 21
+    EditLabel.Width = 94
+    EditLabel.Height = 13
+    EditLabel.Caption = #1048#1089#1093#1086#1076#1085#1072#1103' '#1087#1086#1083#1085#1086#1090#1072
+    TabOrder = 7
+  end
+  object LabeledEdit3: TLabeledEdit
+    Left = 927
+    Top = 360
+    Width = 121
+    Height = 21
+    EditLabel.Width = 89
+    EditLabel.Height = 13
+    EditLabel.Caption = #1048#1089#1093#1086#1076#1085#1099#1081' '#1088#1072#1079#1084#1077#1088
+    TabOrder = 8
+  end
   object FileSaveDialog1: TFileSaveDialog
     FavoriteLinks = <>
     FileTypes = <>

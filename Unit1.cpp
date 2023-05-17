@@ -117,6 +117,8 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 	double MSin = (Vertical[0].x) / dlina;
 	double MCos = (Vertical[0].y) / dlina;
 
+	coefficient = dlina / StrToInt(Form1->LabeledEdit1->Text);
+
 	 for(int i = 0; i < Dots.size(); ++i)
 	{
 		double timed_1 = MCos * Dots[i].x - MSin * Dots[i].y;
@@ -241,6 +243,14 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 {
 	if(Form1->FileSaveDialog1->Execute()) {
 		std::ofstream Data_of_dots(Form1->FileSaveDialog1->FileName.w_str(), std::ios::binary);
+
+		Data_of_dots.write((char*)&coefficient,sizeof(int));
+
+		polnota = StrToInt(Form1->LabeledEdit2->Text);
+		Data_of_dots.write((char*)&polnota,sizeof(int));
+
+		razmer = StrToInt(Form1->LabeledEdit3->Text);
+		Data_of_dots.write((char*)&razmer,sizeof(int));
 
 		int size_of_vector = Vertical.size();
 		Data_of_dots.write((char*)&size_of_vector,sizeof(int));
